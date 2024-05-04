@@ -1,5 +1,5 @@
-import { FlatESLintConfig } from 'eslint-define-config'
-import { SnowdreamESLintConfig } from './typings'
+import type { FlatESLintConfig } from 'eslint-define-config'
+import type { SnowdreamESLintConfig } from './typings'
 import { typescript } from './preset/typescript'
 import { vue } from './preset/vue'
 import { prettier } from './preset/prettier'

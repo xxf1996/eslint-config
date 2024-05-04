@@ -1,7 +1,8 @@
-import { Rules, FlatESLintConfig } from 'eslint-define-config'
+import type { Rules, FlatESLintConfig } from 'eslint-define-config'
 import pluginVue from 'eslint-plugin-vue'
 import parserVue from 'vue-eslint-parser'
 import { GLOB_VUE } from 'src/globs'
+import type { ConfigWithExtends } from 'typescript-eslint'
 import tseslint from 'typescript-eslint'
 import { tsCoreRules } from './typescript'
 
@@ -13,7 +14,7 @@ const vue3Rules: Rules = {
 }
 const vueCustomRules: Partial<Rules> = {}
 const vueTSCoreRules = tseslint.config({
-  extends: tsCoreRules as any[],
+  extends: tsCoreRules as ConfigWithExtends['extends'],
   files: [GLOB_VUE],
 }) as FlatESLintConfig[]
 

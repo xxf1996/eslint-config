@@ -1,4 +1,4 @@
-import { FlatESLintConfig } from 'eslint-define-config'
+import type { FlatESLintConfig } from 'eslint-define-config'
 import { GLOB_DTS, GLOB_TS, GLOB_TSX } from 'src/globs'
 import tseslint from 'typescript-eslint'
 
@@ -9,7 +9,12 @@ export const tsCoreRules = tseslint.config({
     parser: tseslint.parser,
     sourceType: 'module',
   },
-  rules: {},
+  rules: {
+    '@typescript-eslint/consistent-type-imports': [
+      'error',
+      { prefer: 'type-imports', fixStyle: 'separate-type-imports' },
+    ],
+  },
 }) as FlatESLintConfig[]
 
 export const typescript: FlatESLintConfig[] = [

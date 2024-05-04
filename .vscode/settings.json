@@ -1,3 +1,3 @@
 {
-  "eslint.validate": ["typescript"]
+  "eslint.validate": ["typescript"] // NOTICE: 有时候vscode eslint不会显示错误，需要手动添加这个配置进行解决；https://stackoverflow.com/questions/59707128/eslint-is-working-from-terminal-but-not-showing-error-in-the-editor-ui-vscode
 }

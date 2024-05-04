@@ -1,6 +1,6 @@
 import prettierPlugin from 'eslint-plugin-prettier'
 import prettierConfig from 'eslint-config-prettier'
-import { FlatESLintConfig } from 'eslint-define-config'
+import type { FlatESLintConfig } from 'eslint-define-config'
 
 export const prettier: FlatESLintConfig[] = [
   {
