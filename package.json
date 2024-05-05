@@ -1,6 +1,6 @@
 {
   "name": "@snowdream_x/eslint-config",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "ESLint config for @snowdream_x",
   "type": "module",
   "main": "./dist/index.js",
