@@ -12,7 +12,9 @@ const vue3Rules: Rules = {
   ...pluginVue.configs['vue3-strongly-recommended'].rules,
   ...pluginVue.configs['vue3-recommended'].rules,
 }
-const vueCustomRules: Partial<Rules> = {}
+const vueCustomRules: Partial<Rules> = {
+  'vue/multi-word-component-names': 'warn',
+}
 const vueTSCoreRules = tseslint.config({
   extends: tsCoreRules as ConfigWithExtends['extends'],
   files: [GLOB_VUE],

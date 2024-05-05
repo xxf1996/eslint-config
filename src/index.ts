@@ -2,10 +2,10 @@ import type { FlatESLintConfig } from 'eslint-define-config'
 import type { SnowdreamESLintConfig } from './typings'
 import { typescript } from './preset/typescript'
 import { vue } from './preset/vue'
-import { prettier } from './preset/prettier'
+import { format } from './preset/format'
 
-export function snowdream(config: Partial<SnowdreamESLintConfig>) {
-  const configs: FlatESLintConfig[] = [...prettier]
+export function snowdream(config: Partial<SnowdreamESLintConfig>, customConfigs: FlatESLintConfig[] = []) {
+  const configs: FlatESLintConfig[] = [...format]
 
   if (config.typescript) {
     configs.push(...typescript)
@@ -14,6 +14,8 @@ export function snowdream(config: Partial<SnowdreamESLintConfig>) {
   if (config.vue) {
     configs.push(...vue)
   }
+
+  configs.push(...customConfigs)
 
   return configs
 }

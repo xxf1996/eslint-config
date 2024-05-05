@@ -6,7 +6,17 @@
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "exports": "./dist/index.js",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./prettier": {
+      "require": "./prettierrc.js",
+      "import": "./prettierrc.js"
+    }
+  },
   "license": "MIT",
   "keywords": [
     "ESLint"
@@ -29,6 +39,7 @@
     "eslint": "^9.0.0"
   },
   "dependencies": {
+    "@stylistic/eslint-plugin": "^1.8.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-define-config": "^2.1.0",
     "eslint-plugin-prettier": "^5.1.3",
