@@ -1,6 +1,6 @@
 {
   "name": "@snowdream_x/eslint-config",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "ESLint config for @snowdream_x",
   "type": "module",
   "main": "./dist/index.js",
@@ -26,10 +26,13 @@
     "build": "tsup",
     "lint": "eslint src/**/*",
     "fix": "pnpm run lint --fix",
-    "cz": "git add . && git cz"
+    "cz": "git add . && git cz",
+    "release": "bumpp && pnpm publish",
+    "prepublishOnly": "pnpm run build"
   },
   "devDependencies": {
     "@types/node": "^20.12.8",
+    "bumpp": "^9.4.1",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^9.1.1",
     "tsup": "^8.0.2",
