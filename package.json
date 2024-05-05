@@ -17,6 +17,10 @@
       "import": "./prettierrc.js"
     }
   },
+  "files": [
+    "dist",
+    "prettierrc.js"
+  ],
   "license": "MIT",
   "keywords": [
     "ESLint"
