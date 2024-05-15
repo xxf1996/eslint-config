@@ -8,6 +8,7 @@ export const format: FlatESLintConfig[] = [
     indent: 2,
     quotes: 'single',
     commaDangle: 'only-multiline',
-    quoteProps: 'as-needed'
+    quoteProps: 'as-needed',
+    braceStyle: '1tbs' // https://eslint.org/docs/latest/rules/brace-style
   }) as FlatESLintConfig
 ]

@@ -6,22 +6,22 @@ import type { ConfigWithExtends } from 'typescript-eslint'
 import tseslint from 'typescript-eslint'
 import { tsCoreRules } from './typescript'
 
-const vue3Rules: Rules = {
+const VUE3_RULES: Rules = {
   ...pluginVue.configs.base.rules,
   ...pluginVue.configs['vue3-essential'].rules,
   ...pluginVue.configs['vue3-strongly-recommended'].rules,
   ...pluginVue.configs['vue3-recommended'].rules,
 }
-const vueCustomRules: Partial<Rules> = {
+const VUE_CUSTOM_RULES: Partial<Rules> = {
   'vue/multi-word-component-names': 'warn',
 }
-const vueTSCoreRules = tseslint.config({
+const VUE_TS_CORE_RULES = tseslint.config({
   extends: tsCoreRules as ConfigWithExtends['extends'],
   files: [GLOB_VUE],
 }) as FlatESLintConfig[]
 
 export const vue: FlatESLintConfig[] = [
-  ...vueTSCoreRules,
+  ...VUE_TS_CORE_RULES,
   {
     files: [GLOB_VUE],
     languageOptions: {
@@ -41,8 +41,8 @@ export const vue: FlatESLintConfig[] = [
     },
     processor: pluginVue.processors['.vue'],
     rules: {
-      ...vue3Rules,
-      ...vueCustomRules,
+      ...VUE3_RULES,
+      ...VUE_CUSTOM_RULES,
     },
   },
 ]
