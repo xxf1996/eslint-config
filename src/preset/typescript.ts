@@ -39,6 +39,8 @@ export const tsCoreRules = tseslint.config({
         modifiers: ['destructured'],
         format: null
       },
+      // TODO: https://github.com/typescript-eslint/typescript-eslint/issues/4866
+      // https://typescript-eslint.io/blog/parser-options-project-true/#investigating-custom-tsconfig-names
       // 全局常量必须是大写（限定为字面量类型）
       {
         selector: ['variable'],
