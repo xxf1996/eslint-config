@@ -40,7 +40,7 @@ export const tsCoreRules = tseslint.config({
       {
         selector: ['variable'],
         modifiers: ['const', 'global'],
-        types: ['string', 'number', 'boolean', 'array'],
+        types: ['string', 'number', 'boolean'],
         format: ['UPPER_CASE']
       },
       // 导出的常量成员可以是驼峰
