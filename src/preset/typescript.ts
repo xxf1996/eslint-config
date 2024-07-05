@@ -28,7 +28,7 @@ export const tsCoreRules = tseslint.config({
       },
       {
         selector: ['function'],
-        format: ['camelCase']
+        format: ['camelCase', 'PascalCase'], // FIXME: 就没法只针对React组件进行PascalCase的命名了？
       },
       // 解构变量就不用限制了
       {
@@ -36,10 +36,11 @@ export const tsCoreRules = tseslint.config({
         modifiers: ['destructured'],
         format: null
       },
-      // 全局常量必须是大写
+      // 全局常量必须是大写（限定为字面量类型）
       {
         selector: ['variable'],
         modifiers: ['const', 'global'],
+        types: ['string', 'number', 'boolean', 'array'],
         format: ['UPPER_CASE']
       },
       // 导出的常量成员可以是驼峰
