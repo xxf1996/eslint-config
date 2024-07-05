@@ -8,6 +8,9 @@ export const tsCoreRules = tseslint.config({
   languageOptions: {
     parser: tseslint.parser,
     sourceType: 'module',
+    parserOptions: {
+      project: true // naming-convention的types配置需要设置这个
+    }
   },
   rules: {
     '@typescript-eslint/consistent-type-imports': [
