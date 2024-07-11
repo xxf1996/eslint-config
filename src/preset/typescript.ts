@@ -9,7 +9,8 @@ export const tsCoreRules = tseslint.config({
     parser: tseslint.parser,
     sourceType: 'module',
     parserOptions: {
-      project: true // naming-convention的types配置需要设置这个
+      project: true, // naming-convention的types配置需要设置这个
+      tsconfigRootDir: process.cwd(),
     }
   },
   rules: {
